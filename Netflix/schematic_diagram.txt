@@ -1,0 +1,50 @@
+netflix_movies_country
+-
+movie_title VARCHAR(200) PK
+country VARCHAR(200)
+
+
+metadata_movies
+-
+movie_id INT PK
+movie_title VARCHAR(200)
+
+
+imdb_movie_urls
+-
+imdb_id VARCHAR(20) PK
+movie_title VARCHAR(200)
+imdb_url VARCHAR(200)
+
+
+top_rated_imdb_movies
+-
+movie_title VARCHAR(200) PK
+imdb_rating FLOAT
+
+movie_genre
+-
+movie_title VARCHAR(200) PK FK >- movies_info.movie_name
+genre VARCHAR(20)
+
+
+movies_info
+-
+movie_id INT
+movie_name VARCHAR(200) PK
+imdb_id VARCHAR(20)
+
+
+user_info
+-
+user_id INT PK
+gender VARCHAR(20)
+user_occupation VARCHAR(200)
+
+
+User_rated_movies
+-
+user_id INT PK FK >- user_info.user_id
+rating INT
+timestamp VARCHAR(200)
+movie_name VARCHAR(200) PK
